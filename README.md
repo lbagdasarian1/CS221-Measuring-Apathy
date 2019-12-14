@@ -5,6 +5,7 @@ Meilinda Sun
 Fall 2019
 
 ``getTweetDataCSV.py`` scrapes tweets from Twitter filtering by keyword (in our case the location of a given shooting) and accepting start and end timestamp parameters. Our logic interpreteing json responses received from the web in getTweets is based on Jefferson-Henrique's GetOldTweets project (https://github.com/Jefferson-Henrique/GetOldTweets-python). Tweets randomly sampled from each day tested are written to a CSV file named in the following format: [shooting name]\_[num days since first sampled]\_[num tweets collected].csv e.g. ``vegas_1_300.csv`` if we have written 300 tweets about the Las Vegas shooting sampled from the first day we examine.
+- Run `python3 getTweetDataCSV.py` to generate CSV files populated with data
 
 ``logreg.ipynb`` runs our logistic regression sentiment classification experiments. We preprocess and obtain mean GloVe embedding representations of tweets in our training dataset (Sentiment140 dataset) and train a binary classifier using logistic regression (implemented using Keras). We read data from the CSV files containing tweets created by ``getTweetDataCSV.py``, prune irrelevant topics using LDA, and plot changes in sentiment over time.
 
